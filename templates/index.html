@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VideoGPT</title>
+    <meta property="og:title" content="VideoGPT" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+  </head>
+  <body>
+    <div>
+      <script
+        type="text/javascript"
+        src="https://unpkg.com/@lottiefiles/lottie-player@1.6.0/dist/lottie-player.js"
+      ></script>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css')}}" />
+
+      <div class="home-container">
+        <div class="home-container1">
+          <input
+            type="text"
+            placeholder="Ask any question..."
+            class="Heading input home-textinput",
+            name="text"
+          />
+          <button type="submit" class="home-button button">.</button>
+        </div>
+        
+        <div class="home-container2">
+          <lottie-player
+            src="https://assets3.lottiefiles.com/packages/lf20_d6619szt.json"
+            loop=""
+            speed="1"
+            autoplay=""
+            background="transparent"
+            class="home-lottie-node"
+          ></lottie-player>
+          <svg viewBox="0 0 1024 1024" class="home-icon">
+            <path d="M342 214l468 298-468 298v-596z"></path>
+          </svg>
+          <h1 class="home-text">
+            Video&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;GPT
+          </h1>
+        </div>
+      </div>
+
+
+      <video width="320" height="240" controls>
+        <source src="https://cdn.creatomate.com/renders/178b3cc1-94e0-4d35-b287-9e292ef5c04a.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+    </div>
+
+
+    <script>
+      document.getElementById('inputField').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          setTimeout(function () {
+            const videoSection = document.getElementById('video-section');
+            const video = document.createElement('video');
+            const source = document.createElement('source');
+            video.setAttribute('controls', true);
+            video.width = 640;
+            video.height = 360;
+            source.setAttribute('src', 'https://storage.googleapis.com/lumen5-prod-renderedvideos/output76cOrqZOPiymwLuZn6.mp4');
+            source.setAttribute('type', 'video/mp4');
+            video.appendChild(source);
+            videoSection.appendChild(video);
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Enter Text</title>
+  </head>
+  <body>
+    <form method="post">
+      <label for="text">Enter Text:</label>
+      <input type="text" name="text" id="text">
+      <input type="submit" value="Submit">
+    </form>
+    <video controls>
+      <source src="https://storage.googleapis.com/lumen5-prod-renderedvideos/output76cOrqZOPiymwLuZn6.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>    
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Website</title>
+    <style>
+      body {
+        background: linear-gradient(to bottom, #000000, #6b1f6b);
+      }
+      #container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 50px;
+      }
+      h1 {
+        font-size: 3em;
+        color: white;
+      }
+      #text-field {
+        width: 70%;
+        height: 200px;
+        border-radius: 20px;
+        border: none;
+        padding: 20px;
+        margin-top: 50px;
+        background-color: white;
+        font-size: 1.2em;
+      }
+      #video-section {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Welcome to my website</h1>
+      <textarea id="text-field"></textarea>
+      <div id="video-section">
+        
+      </div>
+    </div>
+  </body>
+</html>-->
